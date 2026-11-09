@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EJ4 ARRAY</title>
+    <title>EJ1 ARRAY ASOCIATIVO</title>
 </head>
 <body>
 <?php
 
-    $primero = array ( "Programación", "Bases de Datos", "Lenguajes de Marcas", "Sistemas
-    nformáticos");
-    $segundo = [ "DWES", "DWEC", "Despliegue", "Diseño de Interfaces Web"];
-    $optativas = ["Inglés Profesional","Digitalización"];
+$alumnos = array("Pepa"=>22, "Pepe"=>18, "Pepi"=>16, "Pepo"=>68, "Pepu"=>33); //Creamos el array
 
-    //unidos sin funciones de array
-    $sinFunciones = array();
-    foreach ($primero as $modulo) {
-        $sinFunciones[] = $modulo;
-    }
-    foreach ($segundo as $modulo) {
-        $sinFunciones[] = $modulo;
-    }
-    foreach ($optativas as $modulo) {
-        $sinFunciones[] = $modulo;
-    }
-    var_dump($sinFunciones);
+//Rrecorremos el array y lo mostramos
 
-    //Usando array_merge
-    $conFunciones = array_merge($primero, $segundo, $optativas);
-
-    //Añadiendo
-    $conFunciones[] = "Proyecto Intermodular";
-
-    print(in_array("DWES", $conFunciones)); //Me devuelve 1 que es true
-    $pos = array_search("DWES", $conFunciones); //Me devuelve su posición, 4
-    print($pos);
-    unset($conFunciones[$pos]);
-    sort($conFunciones);
-
-    echo "<ul>";
-    for ($i = 0; $i < count($conFunciones); $i++) 
+foreach ($alumnos as $clave => $valor)
     {
-        echo "<li>" . $conFunciones[$i] . "</li>";
+        echo "Alumno: ". $clave. " Valor: ". $valor;
+        echo "<br>";
     }
-    echo "</ul>";
+
+//Situaremos el puntero en la segunda posición
+
+reset($alumnos); //reiniciamos (vuelve al 1)
+next($alumnos); //Pasamos de la 1 a la 2
+
+$edad = current($alumnos); //Obtengo el valor de donde mira el puntero
+$nombre = key($alumnos); //Obtengo la clave de donde mira el puntero
+
+echo "Alumno: ". $nombre. " Valor: ". $edad;
+echo "<br>";
+
+//Lo ordenamos por edad
+
+asort($alumnos); //sort no nos funciona, porque me lo indexa
+
+//Obtenemos la primera reiniciando
+$priEda = reset($alumnos);
+$priNom = key($alumnos);
+
+//Obtenemos la ultima con end
+$ultEda = end($alumnos);
+$ultNom = key($alumnos);
+
+echo "Alumno: ". $priNom. " Valor: ". $priEda;
+echo "<br>";
+echo "Alumno: ". $ultNom. " Valor: ". $ultEda;
+
+
 
 ?>
+
 </body>
 </html>

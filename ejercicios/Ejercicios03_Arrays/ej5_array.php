@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EJ4 ARRAY</title>
+    <title>EJ5 ARRAY</title>
 </head>
 <body>
 <?php
