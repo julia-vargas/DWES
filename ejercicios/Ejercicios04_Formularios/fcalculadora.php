@@ -1,5 +1,5 @@
 <HTML>
-<HEAD> <TITLE> FORMULARIO BASE </TITLE>
+<HEAD> <TITLE> FCALCULADORA </TITLE>
 </HEAD>
 <BODY>
     
@@ -27,6 +27,27 @@ Seleccione una opcion: <br>
 
 <?php
 
+//Como el ejercicio pedia hacerlo con funciones, creamos una por operación
+function sumar($a, $b)
+{
+    return $a + $b;
+}
+
+function restar($a, $b)
+{
+    return $a - $b;
+}
+
+function multiplicar($a, $b)
+{
+    return $a * $b;
+}
+
+function dividir($a, $b)
+{
+    return $a / $b;
+}
+
 if ($_SERVER['REQUEST_METHOD']=='POST') //Si lo meto dentro del if ya no se carga esta parte nada mas abrir la página
 {
     echo "El method que ha usado es: ",$_SERVER['REQUEST_METHOD'],"<br>";
@@ -37,18 +58,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST') //Si lo meto dentro del if ya no se carg
     switch ($_POST['operacion'])
     {
         case 1:
-            $resultado = $_POST['op1'] + $_POST['op2'];
+            $resultado = sumar($_POST['op1'], $_POST['op2']);
             break;
         case 2:
-            $resultado = $_POST['op1'] - $_POST['op2'];
+            $resultado = restar($_POST['op1'], $_POST['op2']);
             break;
         case 3:
-            $resultado = $_POST['op1'] * $_POST['op2'];
+            $resultado = multiplicar($_POST['op1'], $_POST['op2']);
             break;
         case 4:
-            $resultado = $_POST['op1'] / $_POST['op2'];
+            $resultado = dividir($_POST['op1'], $_POST['op2']);
             break;
-
     }
 
     echo "Resultado: ". $resultado;
