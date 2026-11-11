@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMBIO BASE</title>
+</head>
+<body>
+    <form name='Binario' action='cambiobase.php' method='post'>
+
+    Numero Decimal: <br>
+    <input type='number' name='dec' value=''> <br>
+
+    Convertir a: <br>
+    <input type='radio' name='base' value="1"> Binario<br>
+    <input type='radio' name='base' value="2"> Octal<br>
+    <input type='radio' name='base' value="3"> Hexadecimal<br>
+    <input type='radio' checked name='base' value="4"> Todos sistemas<br>
+    
+    <input type="submit" value="enviar">
+    <input type="reset" value="borrar">
+
+    </form>
+</body>
+</html>
